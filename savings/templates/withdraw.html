@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Withdraw
+{% endblock %}
+
+{% block main %}
+    {% for row in rows %}
+	<section class="forms-section">
+
+			    <div class="panel-bal">
+					<h4>${{row.cash}}.00</h4>
+					<p style = text-align: left>Total Savings</p>
+				</div>
+
+    {% endfor %}
+    	<div class ="info">
+			<div class = 'roww'>
+			    {% for ca in cat %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-bil">
+								<div>
+									<h4>${{ca.savee}}.0</h4>
+									<p>Bills </p>
+									<i class="fas fa-dollar-sign"></i>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+			    {% endfor %}
+			    {% for foo in food %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-foo">
+								<div>
+									<h4>${{foo.foodd}}.0</h4>
+								</div>
+											<p>Food & Drinks</p>
+						<i class="fas fa-utensils"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for trav in trave %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-tra">
+								<div>
+									<h4>${{trav.travee}}.0</h4>
+								</div>
+											<p>Travel</p>
+											<i class="fas fa-plane-departure"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for tran in trans %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-tran">
+								<div>
+									<h4>${{tran.transs}}.0</h4>
+								</div>
+											<p>Transportation</p>
+											<i class="fas fa-bus"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for shop in shops %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-shop">
+								<div>
+									<h4>${{shop.shopp}}.0</h4>
+								</div>
+											<p>Shopping</p>
+											<i class="fas fa-shopping-cart"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for other in others %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-other">
+								<div>
+									<h4>${{other.otherr}}.0</h4>
+								</div>
+											<p>Others</p>
+											<i class="far fa-grin-tongue-squint"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			</div>
+		</div>
+            <div class="form-wrapper">
+                <form class="formsandw" action="/withdraw" method="post">
+                    <div class="input-block">
+                        <input autocomplete="off"  name="withname" placeholder="Withdrawal Name" type="text" required>
+                    </div>
+                    <div class="input-block">
+                        <select class="select" name="category">
+                            <option value='catt'> Category.....</option>
+                            <option value="Food & Drinks">Food and Drinks</option>
+                            <option value="Transport">Transportation</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Shop">Shopping</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-block">
+                        <input autocomplete="off"  name="withamt" placeholder="Amount in $" type="number" min="1">
+                    </div>
+                <button class="btnsandw" type="submit">Withdraw</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

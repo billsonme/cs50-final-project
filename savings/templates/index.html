@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+{% block main %}
+	<div class = "main_content">
+		<div class="header">
+			{% for nam in name %}
+				<h1> Hello, {{nam.username}} </h1>
+			{% endfor %}
+		</div>
+		{% for cas in cash %}
+
+			    <div class="panel-bal">
+					<h4>${{cas.cash}}.00</h4>
+					<p style = text-align: left>Total Savings</p>
+				</div>
+		{% endfor %}
+		<div class ="info">
+			<div class = 'roww'>
+			    {% for ca in cat %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-bil">
+								<div>
+									<h4>${{ca.savee}}.0</h4>
+									<p>Bills </p>
+									<i class="fas fa-dollar-sign"></i>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+			    {% endfor %}
+			    {% for foo in food %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-foo">
+								<div>
+									<h4>${{foo.foodd}}.0</h4>
+								</div>
+											<p>Food & Drinks</p>
+						<i class="fas fa-utensils"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for trav in trave %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-tra">
+								<div>
+									<h4>${{trav.travee}}.0</h4>
+								</div>
+											<p>Travel</p>
+											<i class="fas fa-plane-departure"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for tran in trans %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-tran">
+								<div>
+									<h4>${{tran.transs}}.0</h4>
+								</div>
+											<p>Transportation</p>
+											<i class="fas fa-bus"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for shop in shops %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-shop">
+								<div>
+									<h4>${{shop.shopp}}.0</h4>
+								</div>
+											<p>Shopping</p>
+											<i class="fas fa-shopping-cart"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			    {% for other in others %}
+			        <div class="col-sm-2">
+			            <div class="panel widget">
+							<div class="panel-other">
+								<div>
+									<h4>${{other.otherr}}.0</h4>
+								</div>
+											<p>Others</p>
+											<i class="far fa-grin-tongue-squint"></i>
+							</div>
+						</div>
+					</div>
+			    {% endfor %}
+			</div>
+ {% endblock %}

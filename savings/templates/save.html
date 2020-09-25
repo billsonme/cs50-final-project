@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Save
+{% endblock %}
+
+{% block main %}
+    <section class="forms-section">
+        <div class="formss">
+            <div class="form-wrapper">
+            <form class="formsandw" action="/save" method="post">
+                <div class="input-block">
+                    <input autocomplete="off"  name="savename" placeholder="Name of Savings" type="text" required/>
+                </div>
+
+                <div class="input-block">
+                    <select class="select" name="category">
+                        <option value='catt'> Category.....</option>
+                        <option value="Food & Drinks">Food and Drinks</option>
+                        <option value="Transport">Transportation</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Shop">Shopping</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="input-block">
+                    <input autocomplete="off" name="saveamt" placeholder="Amount in $" type="number" min="1" required />
+                </div>
+                <button class="btnsandw" type="submit">Save</button>
+            </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

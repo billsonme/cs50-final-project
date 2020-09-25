@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+        <table class="cinereousTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date and time</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for hist in history %}
+                    <tr>
+                        <td>{{ hist.savename }}</td>
+                        <td>${{ hist.saveamt }}</td>
+                        <td>{{ hist.category }}</td>
+                        <td>{{ hist.dateandtime }}</td>
+                        <td>${{ hist.users_cash }}.00</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+
+
+{% endblock %}
