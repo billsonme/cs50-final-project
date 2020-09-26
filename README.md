@@ -19,3 +19,7 @@ sqlite3
 css
 
 With help from Cs50 web track and some online videos.
+
+To see how it works:
+
+https://youtu.be/Gqnq6LuhCt8
